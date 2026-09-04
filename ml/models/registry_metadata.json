@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-09-04T10:54:18.349655",
+  "dataset_version": "v2026.09.4-synthetic-trunk",
+  "total_training_samples": 5265,
+  "models": {
+    "delay_prediction": {
+      "model_name": "Delay_Regressor_XGBoost",
+      "version": "v1.8",
+      "status": "Production",
+      "algorithm": "Gradient Boosted Trees (XGBoost)",
+      "metrics": {
+        "mae_minutes": 3.56,
+        "rmse_minutes": 4.33,
+        "r2_score": 0.9851
+      },
+      "feature_importances": {
+        "prev_station_delay_min": 0.44985052943229675,
+        "weather_severity_index": 0.21269969642162323,
+        "priority": 0.15801677107810974,
+        "distance_km": 0.10284799337387085,
+        "stop_sequence": 0.061294980347156525,
+        "station_dwell_delta": 0.007325933780521154,
+        "rainfall_mm": 0.002901952713727951,
+        "route_congestion_index": 0.0028317926917225122,
+        "day_of_week": 0.0009108429658226669,
+        "is_weekend": 0.0008541569113731384,
+        "is_holiday": 0.00046535106957890093
+      },
+      "artifact_path": "models/delay_regressor_xgb.joblib",
+      "training_date": "2026-09-04 10:54"
+    },
+    "severe_delay_risk": {
+      "model_name": "Severe_Delay_Classifier_GBM",
+      "version": "v1.8",
+      "status": "Production",
+      "algorithm": "Gradient Boosting Classifier",
+      "metrics": {
+        "precision": 0.948,
+        "recall": 0.946,
+        "f1_score": 0.947,
+        "roc_auc": 0.994
+      },
+      "artifact_path": "models/severe_delay_classifier.joblib",
+      "training_date": "2026-09-04 10:54"
+    },
+    "cancellation_risk": {
+      "model_name": "Cancellation_Classifier_GBM",
+      "version": "v1.8",
+      "status": "Production",
+      "algorithm": "Calibrated Gradient Boosting",
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "roc_auc": 0.95
+      },
+      "artifact_path": "models/cancellation_classifier.joblib",
+      "training_date": "2026-09-04 10:54"
+    },
+    "passenger_demand": {
+      "model_name": "Demand_Forecaster_GBM",
+      "version": "v1.8",
+      "status": "Production",
+      "algorithm": "Gradient Boosting Regressor",
+      "metrics": {
+        "mae_passengers": 75.0,
+        "rmse_passengers": 91.5,
+        "r2_score": 0.8723
+      },
+      "artifact_path": "models/demand_forecaster_gbm.joblib",
+      "training_date": "2026-09-04 10:54"
+    }
+  }
+}
